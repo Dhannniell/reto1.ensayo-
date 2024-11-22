@@ -1,69 +1,6 @@
 from datetime import datetime
 import statistics
 
-class Tarea:
-    # Funcion de inicializacion = metodo constructor 
-    
-    def __init__(self, nombre, fechaLimite, categoria, horasDedicadas):
-        self.nombre = nombre
-        self.fechaLimite = fechaLimite
-        self.categoria = categoria
-        self.horasDedicadas = horasDedicadas
-        
-        
-        
-#funcion para agragar una tarea 
-
-def agregarTarea(listaTareas):
-    nombre = input("Ingrese el nombre de la tarea: ")
-    fechaLimite_str = input("Ingrese la fecha limite de la tarea (DD/MM/AAAA): ")
-    try:
-        fechaLimite = datetime.strptime(fechaLimite_str, "%d/%m/%Y")
-    except ValueError:
-        print("Fecha no válida.")
-        return
-
-    categoria = input("Ingrese la categoría de la tarea (Personal, Trabajo, Estudio): ")
-    horasDedicadas_str = input("Ingrese las horas dedicadas separadas en comas ej; 2,5,9: ")
-    try:
-        horasDedicadas = list(map(float, horasDedicadas_str.split(",")))
-    except ValueError:
-        print("Horas no válidas.")
-        return
-
-    # Crear un objeto Tarea y agregarlo a la lista
-    tarea = Tarea(nombre, fechaLimite, categoria, horasDedicadas)
-    listaTareas.append(tarea)
-    print("¡Tarea agregada con éxito!")
-    
- #crear un objeto y lo agrega a la lista de tareas 
- 
-    tarea = Tarea(nombre, fechaLimite, categoria, horasDedicadas)
-    listaTareas.append(tarea)
-    print("Tarea agregada con exito! ")
-    
-def visualizarTareas(listaTareas):
-    if not listaTareas:
-        print("No hay tareas registradas.")
-        return
-        
-    for i, tarea in enumerate(listaTareas, start=1):
-        print(f"\nTarea {i}  ")
-        print(f"Nombre: {tarea.nombre}")
-        print(f"Fecha Limite: {tarea.fechaLimite.strftime("%d/%m/%Y")}")
-        print(f"Categoria: {tarea.categoria}")
-        print(f"Horas Dedicadas: {tarea.horasDedicadas}")
- 
-        
-        
-def analizarHoras(listaTareas):
-    if not listaTareas:
-        print("No hay tareas registradas.")
-        return
-    
-   from datetime import datetime
-import statistics
-
 class Experimento: 
     
 #Funcion de Inicializacion
